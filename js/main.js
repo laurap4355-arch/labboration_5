@@ -104,6 +104,9 @@ function createStudentCard() {
 };
 
     // Spara och uppdatera historiken
+    history.unshift(studentCard);
+    saveHistory();
+    renderHistory();
     
 }
 
