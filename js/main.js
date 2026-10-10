@@ -66,7 +66,7 @@ function displayErrors() {
 
     // Skriv ut aktuella felmeddelanden till DOM
     for (const error of errors){
-        
+     const liElement =document.createElement("li");
     }
       
 }
