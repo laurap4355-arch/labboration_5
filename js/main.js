@@ -51,6 +51,7 @@ function validateForm() {
     displayErrors ();
 
     // Returnera resultatet (true eller false) av valideringen
+    return errors.length === 0;
 }
 
 
