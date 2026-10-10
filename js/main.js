@@ -35,8 +35,12 @@ let history = [];
 
 function validateForm() {
   errors = []; 
+
+  // Kontrollera formulärets obligatoriska fält
+  if (fullnameInput.value.trim() === ""){
+   errors.push("Du måste skriva ditt namn")
+  };
   
-    // Kontrollera formulärets obligatoriska fält
 
     // Visa eventuella felmeddelanden
 
