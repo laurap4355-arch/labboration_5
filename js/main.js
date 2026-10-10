@@ -80,8 +80,13 @@ function displayErrors() {
 function createStudentCard() {
 
     // Hämta information från formuläret
-
+    const fullnameInput = fullnameInput.value.trim();
+    const emailInput = emailInput.value.trim();
+    const phoneInput = phoneInput.value.trim();
+    const font = fontSelect.value();
+    
     // Uppdatera studentkortet
+
 
     // Lägg till studentkortet i historiken
 
@@ -143,10 +148,16 @@ function deleteHistory() {
 // - validera inmatningen
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    validateForm();
-})
+     validateForm()
 
-// - skapa studentkort om valideringen lyckas
+    // - skapa studentkort om valideringen lyckas
+
+    
+
+});
+
+
+
 
 
 // När användaren klickar på "Rensa"
