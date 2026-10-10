@@ -68,7 +68,7 @@ function displayErrors() {
     for (const error of errors){
      const liElement =document.createElement("li");
      liElement.textContent = error;
-
+      errorList.appendChild(liElement);
     }
       
 }
