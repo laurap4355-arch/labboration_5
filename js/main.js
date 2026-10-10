@@ -96,8 +96,15 @@ function createStudentCard() {
 
 
     // Lägg till studentkortet i historiken
+    const studentCard = {
+    fullname: fullnameInput.value.trim(),
+    email: emailInput.value.trim(),
+    phone: phoneInput.value.trim(),
+    font: fontSelect.value
+};
 
     // Spara och uppdatera historiken
+    
 }
 
 
