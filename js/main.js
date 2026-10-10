@@ -48,6 +48,7 @@ function validateForm() {
   };
 
     // Visa eventuella felmeddelanden
+    displayErrors ();
 
     // Returnera resultatet (true eller false) av valideringen
 }
