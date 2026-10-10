@@ -32,7 +32,10 @@ let history = [];
  * Validerar formulärets inmatning.
  * @returns {boolean}
  */
+
 function validateForm() {
+  errors = []; 
+  
     // Kontrollera formulärets obligatoriska fält
 
     // Visa eventuella felmeddelanden
