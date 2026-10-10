@@ -58,8 +58,12 @@ function validateForm() {
 /**
  * Visar felmeddelanden på sidan.
  */
+
 function displayErrors() {
+
     // Rensa tidigare felmeddelanden
+    errorList.innerHTML = "";
+
 
     // Skriv ut aktuella felmeddelanden till DOM
 }
