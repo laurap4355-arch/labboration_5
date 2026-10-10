@@ -136,12 +136,12 @@ function loadHistory() {
 
 }
 
-
 /**
  * Visar historiken på sidan.
  */
 function renderHistory() {
     // Rensa tidigare visad historik
+    historySection.innerHTML = "";
 
 
     // Skriv ut innehållet i history till DOM
