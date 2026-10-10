@@ -64,8 +64,11 @@ function displayErrors() {
     // Rensa tidigare felmeddelanden
     errorList.innerHTML = "";
 
-
     // Skriv ut aktuella felmeddelanden till DOM
+    for (const error of errors){
+        
+    }
+      
 }
 
 
@@ -73,6 +76,7 @@ function displayErrors() {
  * Skapar ett studentkort och visar det på sidan.
  */
 function createStudentCard() {
+
     // Hämta information från formuläret
 
     // Uppdatera studentkortet
