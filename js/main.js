@@ -40,7 +40,9 @@ function validateForm() {
   if (fullnameInput.value.trim() === ""){
    errors.push("Du måste skriva ditt namn")
   };
-  
+  if(emailInput.value.trim() === ""){
+    errors.push("Du måste skriva din e-postadress")
+  }
 
     // Visa eventuella felmeddelanden
 
