@@ -145,6 +145,10 @@ function renderHistory() {
 
 
     // Skriv ut innehållet i history till DOM
+    for (const studentCard of history){
+        
+    }
+
 }
 
 
