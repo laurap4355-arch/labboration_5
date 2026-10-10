@@ -107,7 +107,6 @@ function createStudentCard() {
     history.unshift(studentCard);
     saveHistory();
     renderHistory();
-    
 }
 
 
@@ -124,7 +123,9 @@ function saveHistory() {
  * Läser in tidigare historik från localStorage.
  */
 function loadHistory() {
+
     // Hämta eventuell sparad historik
+    const savedHistory = localStorage.getItem("studentHistory")
 
     // Uppdatera history
 }
@@ -135,6 +136,7 @@ function loadHistory() {
  */
 function renderHistory() {
     // Rensa tidigare visad historik
+
 
     // Skriv ut innehållet i history till DOM
 }
