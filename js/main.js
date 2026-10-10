@@ -132,6 +132,8 @@ function loadHistory() {
         history = JSON.parse(savedHistory);
     }
 
+    renderHistory();
+
 }
 
 
