@@ -42,7 +42,10 @@ function validateForm() {
   };
   if(emailInput.value.trim() === ""){
     errors.push("Du måste skriva din e-postadress")
-  }
+  };
+  if(phoneInput.value.trim() === ""){
+  errors.push("Du måste skriva ditt telefonnummer")
+  };
 
     // Visa eventuella felmeddelanden
 
