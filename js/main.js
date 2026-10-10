@@ -128,6 +128,10 @@ function loadHistory() {
     const savedHistory = localStorage.getItem("studentHistory")
 
     // Uppdatera history
+    if (savedHistory) {
+        history = JSON.parse(savedHistory);
+    }
+
 }
 
 
