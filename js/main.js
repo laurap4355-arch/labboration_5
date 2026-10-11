@@ -184,6 +184,10 @@ function clearForm() {
     previewEmail.textContent = "E-post";
     previewPhone.textContent = "Telefon";
 
+    previewFullname.style.fontFamily = "";
+    previewEmail.style.fontFamily = "";
+    previewPhone.style.fontFamily = "";
+
 
 
 
