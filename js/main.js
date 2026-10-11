@@ -158,8 +158,8 @@ function renderHistory() {
 
         const phone = document.createElement("p")
         phone.textContent = studentCard.phone;
-
-
+         
+        article.style.fontFamily = studentCard.font;
     }
 
 }
