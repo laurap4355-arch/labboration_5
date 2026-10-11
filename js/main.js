@@ -198,7 +198,10 @@ function clearForm() {
  * Raderar hela historiken.
  */
 function deleteHistory() {
+
     // Radera sparad historik
+   history = [];
+
 
     // Uppdatera history och visningen på sidan
 }
