@@ -188,10 +188,8 @@ function clearForm() {
     previewEmail.style.fontFamily = "";
     previewPhone.style.fontFamily = "";
 
-
-
-
     // Rensa eventuella felmeddelanden
+    errors = [];
 }
 
 
