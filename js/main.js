@@ -204,9 +204,8 @@ function deleteHistory() {
 
    localStorage.removeItem("studentHistory");
 
-
-
     // Uppdatera history och visningen på sidan
+    renderHistory();
 }
 
 
