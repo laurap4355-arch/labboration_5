@@ -150,10 +150,15 @@ function renderHistory() {
         const article = document.createElement("article");
 
         const name = document.createElement("p")
+        name.textContent = studentCard.fullname;
         
         const email = document.createElement("p")
+        email.textContent = studentCard.email;
+
 
         const phone = document.createElement("p")
+        phone.textContent = studentCard.phone;
+
 
     }
 
