@@ -190,6 +190,7 @@ function clearForm() {
 
     // Rensa eventuella felmeddelanden
     errors = [];
+    displayErrors();
 }
 
 
