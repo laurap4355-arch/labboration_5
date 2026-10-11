@@ -176,7 +176,10 @@ function renderHistory() {
  * Rensar formulär, aktuellt studentkort och felmeddelanden.
  */
 function clearForm() {
+
     // Återställ formulär och studentkort
+    form.reset();
+
 
     // Rensa eventuella felmeddelanden
 }
