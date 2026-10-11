@@ -148,6 +148,13 @@ function renderHistory() {
     for (const studentCard of history){
 
         const article = document.createElement("article");
+
+        const name = document.createElement("p")
+        
+        const email = document.createElement("p")
+
+        const phone = document.createElement("p")
+
     }
 
 }
