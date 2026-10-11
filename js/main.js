@@ -165,6 +165,8 @@ function renderHistory() {
         article.appendChild(name);
         article.appendChild(email);
         article.appendChild(phone);
+
+        historySection.appendChild(article);
     }
 
 }
