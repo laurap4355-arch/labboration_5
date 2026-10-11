@@ -1,7 +1,7 @@
 "use strict";
 /*
  * Laboration 5 - Studentkortsgenerator
- * Namn: DITT NAMN
+ * Namn: Laura Pham
  */
 
 // Hämta element från DOM
@@ -34,9 +34,10 @@ let history = [];
  */
 
 function validateForm() {
+  // Töm gamla fel innan formuläret kontrolleras igen
   errors = []; 
 
-  // Kontrollera formulärets obligatoriska fält
+  // Kontrollera formulärets obligatoriska fält om de är tomt
   if (fullnameInput.value.trim() === ""){
    errors.push("Du måste skriva ditt namn")
   };
@@ -61,14 +62,21 @@ function validateForm() {
 
 function displayErrors() {
 
-    // Rensa tidigare felmeddelanden
+    // Rensa tidigare felmeddelanden från sidan
     errorList.innerHTML = "";
 
     // Skriv ut aktuella felmeddelanden till DOM
-    for (const error of errors){
-     const liElement =document.createElement("li");
-     liElement.textContent = error;
-      errorList.appendChild(liElement);
+   
+    for (const error of errors){  // Gå igenom varje fel som finns i errors
+
+    // Skapa ett nytt li-element för varje fel
+    const liElement =document.createElement("li");
+
+    // Lägg felmeddelandet som text i li-elementet
+    liElement.textContent = error;
+     
+    // Lägg li-elementet i fellistan på sidan 
+    errorList.appendChild(liElement);
     }
       
 }
@@ -90,12 +98,13 @@ function createStudentCard() {
     previewEmail.textContent = email;
     previewPhone.textContent = phone;
     
+    // Använd det valda typsnittet på studentkortets text
     previewFullname.style.fontFamily = font;
     previewEmail.style.fontFamily = font;
     previewPhone.style.fontFamily = font;
 
 
-    // Lägg till studentkortet i historiken
+    // Skapa ett objekt som innehåller studentkortets information
     const studentCard = {
     fullname: fullnameInput.value.trim(),
     email: emailInput.value.trim(),
@@ -103,9 +112,13 @@ function createStudentCard() {
     font: fontSelect.value
 };
 
-    // Spara och uppdatera historiken
+    // Lägg det nya studentkortet först i history-arrayen
     history.unshift(studentCard);
+
+    // Spara historiken i localStorage
     saveHistory();
+
+    // Uppdatera historiken som visas på webbsidan
     renderHistory();
 }
 
@@ -114,7 +127,7 @@ function createStudentCard() {
  * Sparar historiken i localStorage.
  */
 function saveHistory() {
-    // Spara history i localStorage
+    // Spara history i localStorage och gör om history-arrayen till text med JSON.stringify
     localStorage.setItem("studentHistory", JSON.stringify(history));
 }
 
@@ -127,11 +140,12 @@ function loadHistory() {
     // Hämta eventuell sparad historik
     const savedHistory = localStorage.getItem("studentHistory")
 
-    // Uppdatera history
+    // Kontrollera om det finns något sparat
     if (savedHistory) {
-        history = JSON.parse(savedHistory);
+        history = JSON.parse(savedHistory);   // Gör om den sparade texten till en JavaScript-array och lägg den i history
     }
 
+    // Visa historiken på sidan
     renderHistory();
 
 }
@@ -140,15 +154,17 @@ function loadHistory() {
  * Visar historiken på sidan.
  */
 function renderHistory() {
+    
     // Rensa tidigare visad historik
     historySection.innerHTML = "";
 
-
-    // Skriv ut innehållet i history till DOM
+    // Gå igenom varje studentkort som finns i history
     for (const studentCard of history){
 
+        // Skapa ett article-element för ett studentkort
         const article = document.createElement("article");
 
+        // Skapa ett p-element för namnet, email och telefonnummer och lägg studentens namn, email, telefonnummer i p-elementet
         const name = document.createElement("p")
         name.textContent = studentCard.fullname;
         
@@ -159,13 +175,15 @@ function renderHistory() {
         const phone = document.createElement("p")
         phone.textContent = studentCard.phone;
          
+        // Använd studentkortets sparade typsnitt
         article.style.fontFamily = studentCard.font;
 
-
+        // Lägg namn, e-post och telefon inuti article
         article.appendChild(name);
         article.appendChild(email);
         article.appendChild(phone);
 
+        // Lägg studentkortet i historikdelen på sidan
         historySection.appendChild(article);
     }
 
@@ -177,20 +195,22 @@ function renderHistory() {
  */
 function clearForm() {
 
-    // Återställ formulär och studentkort
+    // Återställ alla fält i formuläret
     form.reset();
 
+    // Återställ texten på studentkortet
     previewFullname.textContent = "Namn";
     previewEmail.textContent = "E-post";
     previewPhone.textContent = "Telefon";
 
+    // Ta bort det valda typsnittet från studentkortet
     previewFullname.style.fontFamily = "";
     previewEmail.style.fontFamily = "";
     previewPhone.style.fontFamily = "";
 
     // Rensa eventuella felmeddelanden
-    errors = [];
-    displayErrors();
+    errors = [];   // Töm gamla fel
+    displayErrors();  // Uppdatera fellistan så att gamla fel försvinner
 }
 
 
@@ -199,13 +219,14 @@ function clearForm() {
  */
 function deleteHistory() {
 
-    // Radera sparad historik
+   // Töm history-arrayen
    history = [];
 
+   // Ta bort den sparade historiken från localStorage
    localStorage.removeItem("studentHistory");
 
-    // Uppdatera history och visningen på sidan
-    renderHistory();
+   // Uppdatera sidan så att historiken försvinner direkt
+   renderHistory();
 }
 
 
@@ -214,7 +235,7 @@ function deleteHistory() {
 // När formuläret skickas:
 // - validera inmatningen
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Stoppa webbläsaren från att ladda om sidan
 
      // - skapa studentkort om valideringen lyckas
     if (validateForm()) {
@@ -223,11 +244,11 @@ form.addEventListener("submit", (event) => {
 
 });
 
-
-// När användaren klickar på "Rensa"
+ 
+// När användaren klickar på "Rensa" kör funktionen clearForm
 clearButton.addEventListener("click", clearForm);
 
-// När användaren klickar på "Radera historik"
+// När användaren klickar på "Radera historik" kör funktionen deleteHistory
 deleteHistoryButton.addEventListener("click", deleteHistory);
 
 
